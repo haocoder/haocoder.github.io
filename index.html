@@ -106,7 +106,8 @@
 <li>从节点连接到主节点，并请求快照点之后所发生的数据更改日志。快照与系统复制日志的某个确定位置相关联，这个位置在PG中称为“log sequence number(日志序列号），MySQL中称为”binlog coordinates”</li>
 <li>获得日志之后，从节点来应用这些快照点之后所有的数据变更，这个过程称为<strong>追赶</strong>。接下来，它可以继续处理主节点上新的数据变化。并重复步骤1~4。具体的详细步骤和操作因数据库系统而异。</li>
 </ol>
-<h4 id="处理节点失效"><a href="#处理节点失效" class="headerlink" title="处理节点失效"></a>处理节点失效</h4>
+<h4 id="处理节点失效"><a href="#处理节点失效" class="headerlink" title="处理节点失效"></a>处理节点失效</h4><p><strong>如何通过主从复制技术实现系统高可用呢？</strong></p>
+
       
     </div>
     <footer class="article-footer">
