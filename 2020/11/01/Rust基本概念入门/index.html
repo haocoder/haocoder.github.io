@@ -20,28 +20,34 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="haocoder">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="语句与表达式1234567891011fn main() &amp;#123;    pub fn answer() -&gt;() &amp;#123;        let a &#x3D; 40;        let b &#x3D; 2;        assert_eq!(sum(a,b), 42);    &amp;#125;    pub fn sum(a: i32, b: i32) -&gt; i32 &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rust基础概念入门">
+<meta property="og:url" content="http://example.com/2020/11/01/Rust%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="haocoder">
+<meta property="og:description" content="语句与表达式1234567891011fn main() &amp;#123;    pub fn answer() -&gt;() &amp;#123;        let a &#x3D; 40;        let b &#x3D; 2;        assert_eq!(sum(a,b), 42);    &amp;#125;    pub fn sum(a: i32, b: i32) -&gt; i32 &amp;#123;">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-11-01T11:08:09.322Z">
+<meta property="article:modified_time" content="2020-11-01T11:08:09.323Z">
 <meta property="article:author" content="Henry Xue">
+<meta property="article:tag" content="语句表达式">
+<meta property="article:tag" content="trait与抽象">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2020/11/01/Rust%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%85%A5%E9%97%A8/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>haocoder</title>
+  <title>Rust基础概念入门 | haocoder</title>
   
 
 
@@ -159,9 +165,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -177,10 +184,9 @@
       <meta itemprop="name" content="haocoder">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/01/Rust%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">Rust基础概念入门</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Rust基础概念入门
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -226,7 +232,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="语句与表达式"><a href="#语句与表达式" class="headerlink" title="语句与表达式"></a>语句与表达式</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">answer</span></span>() -&gt;() &#123;</span><br><span class="line">        <span class="keyword">let</span> a = <span class="number">40</span>;</span><br><span class="line">        <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">assert_eq!</span>(sum(a,b), <span class="number">42</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">sum</span></span>(a: <span class="built_in">i32</span>, b: <span class="built_in">i32</span>) -&gt; <span class="built_in">i32</span> &#123;</span><br><span class="line">        a + b</span><br><span class="line">    &#125;</span><br><span class="line">    answer();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="语句与表达式"><a href="#语句与表达式" class="headerlink" title="语句与表达式"></a>语句与表达式</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">answer</span></span>() -&gt;() &#123;</span><br><span class="line">        <span class="keyword">let</span> a = <span class="number">40</span>;</span><br><span class="line">        <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">assert_eq!</span>(sum(a,b), <span class="number">42</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">sum</span></span>(a: <span class="built_in">i32</span>, b: <span class="built_in">i32</span>) -&gt; <span class="built_in">i32</span> &#123;</span><br><span class="line">        a + b</span><br><span class="line">    &#125;</span><br><span class="line">    answer();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -506,362 +512,34 @@
 </ul>
 <h4 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h4><p>使用println!宏语句进行格式化打印，该宏支持的格式化列表：</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// println!打印宏</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()&#123;</span><br><span class="line">    <span class="comment">// 1. nothing代表display</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>, <span class="number">22</span>);    <span class="comment">// 22</span></span><br><span class="line">    <span class="comment">// 2. ?代表Debug</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, <span class="number">22</span>);   <span class="comment">// 22</span></span><br><span class="line">    <span class="comment">// 3. o代表八进制</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:o&#125;&quot;</span>, <span class="number">22</span>);  <span class="comment">// 26</span></span><br><span class="line">      <span class="comment">// 4. x代表十六进制小写</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:x&#125;&quot;</span>, <span class="number">22</span>);   <span class="comment">// 16</span></span><br><span class="line">      <span class="comment">// 5. X代表十六进制大写</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:X&#125;&quot;</span>, <span class="number">22</span>);   <span class="comment">// 16</span></span><br><span class="line">    <span class="comment">// 6. p代表指针</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:p&#125;&quot;</span>, &amp;<span class="number">22</span>);  <span class="comment">// 0x560486d5b004</span></span><br><span class="line">      <span class="comment">// 7. b代表二进制</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:b&#125;&quot;</span>, <span class="number">22</span>);   <span class="comment">// 10110</span></span><br><span class="line">      <span class="comment">// 8. e代表指数小写</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:e&#125;&quot;</span>, <span class="number">22</span>);   <span class="comment">// 2.2e1</span></span><br><span class="line">    <span class="comment">// 9. E代表指数大写</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:E&#125;&quot;</span>, <span class="number">22</span>);   <span class="comment">// 2.2E1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%AD%E5%8F%A5%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag"># 语句表达式</a>
+              <a href="/tags/trait%E4%B8%8E%E6%8A%BD%E8%B1%A1/" rel="tag"># trait与抽象</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/01/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Henry Xue">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="haocoder">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/01/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">Rust类型系统</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-11-01 18:49:25 / Modified: 19:00:39" itemprop="dateCreated datePublished" datetime="2020-11-01T18:49:25+08:00">2020-11-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Rust%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">Rust编程语言</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>10k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>9 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="类型系统与多态性"><a href="#类型系统与多态性" class="headerlink" title="类型系统与多态性"></a>类型系统与多态性</h2><p>现代编程语言包括三种多态形式：</p>
-<ul>
-<li>参数化多态 （Parametric Polymorphism)： 实际就是指泛型，同一段代码适用于多种类型</li>
-<li>Ad-hoc 多态： 也叫特定多态，指同一种行为定义，在不同的上下文中会响应不同的行为实现，Rust使用trait来支持Ad-hoc多态</li>
-<li>子类型多态，一般用在面向对象编程语言中，比如Java语言中的多态是子类型多态</li>
-</ul>
-<p>也可以按照多态发生的时间来划分：</p>
-<ul>
-<li>静态多态（Static Polymorphism)：发生在编译期，静态多态是一种零成本抽象</li>
-<li>动态多态 (Dynamic Polymorphism)： 发生在运行时，牺牲性能获取灵活性。</li>
-</ul>
-<p><strong>Rust中的类型系统目前只支持参数化多态和Ad-hoc多态，也就是，泛型和trait</strong></p>
-<h3 id="Rust类型系统概述"><a href="#Rust类型系统概述" class="headerlink" title="Rust类型系统概述"></a>Rust类型系统概述</h3><p>Rust是一门<strong>强类型且类型安全的静态语言</strong>。Rust中一切皆表达式，表达式皆有值，值皆有类型，所以也可以说Rust中一切皆类型。</p>
-<h4 id="1-类型大小"><a href="#1-类型大小" class="headerlink" title="1. 类型大小"></a>1. 类型大小</h4><p>Rust没有GC，内存首先由编译器来分配，Rust代码被编译为LLVM IR,其中携带了内存分配的信息，所以编译器需要事先知道类型的大小，才能分配合理的内存。</p>
-<h5 id="可确定大小的类型和动态大小类型"><a href="#可确定大小的类型和动态大小类型" class="headerlink" title="可确定大小的类型和动态大小类型"></a>可确定大小的类型和动态大小类型</h5><ul>
-<li>编译器可确定大小的类型 （Sized Type)<ul>
-<li>原生整数类型，…..</li>
-</ul>
-</li>
-<li>动态大小类型 (Dynamic Sized Type, DST)<ul>
-<li>str类型字符串字面量，编译器事先不知道大小，因此str类型大小无法确切直到</li>
-<li>Rust提供了引用类型：&amp;str，即字符串切片，它的大小已知（指向字符串的指针和字符串长度），编译器可以在栈上为&amp;str分配确定大小空间，而str字符串本身是在运行时在堆内存上分配空间存储。</li>
-<li>&amp;str是一种胖指针(Fat Pointer)：因为它包含了动态大小类型的地址信息和长度信息，比普通指针占用的空间更大。</li>
-<li>str, 数组,</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将数组直接作为函数参数</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">reset</span></span>(<span class="keyword">mut</span> arr: [<span class="built_in">u32</span>])   <span class="comment">// 编译错误:doesn&#x27;t have a size known at compile-time，编译器无法确定参数[u32]类型的大小</span></span><br><span class="line">&#123;</span><br><span class="line">    arr[<span class="number">0</span>] = <span class="number">5</span>;</span><br><span class="line">    arr[<span class="number">1</span>] = <span class="number">4</span>;</span><br><span class="line">    arr[<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">    arr[<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">    arr[<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;reset arr: &#123;:?&#125;&quot;</span>, arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="1-指定数组大小解决上述编译错误"><a href="#1-指定数组大小解决上述编译错误" class="headerlink" title="1. 指定数组大小解决上述编译错误"></a>1. 指定数组大小解决上述编译错误</h6><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数参数使用[u32; 5]类型</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">reset</span></span>(<span class="keyword">mut</span> arr: [<span class="built_in">u32</span>; <span class="number">5</span>])  <span class="comment">// [u32; 5] 确定大小</span></span><br><span class="line">&#123;</span><br><span class="line">    arr[<span class="number">0</span>] = <span class="number">5</span>;</span><br><span class="line">    arr[<span class="number">1</span>] = <span class="number">4</span>;</span><br><span class="line">    arr[<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">    arr[<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">    arr[<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">     <span class="built_in">println!</span>(<span class="string">&quot;reset arr: &#123;:?&#125;&quot;</span>, arr);  <span class="comment">// reset arr: [5, 4, 3, 2, 1]</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> arr: [<span class="built_in">u32</span>;<span class="number">5</span>] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">    reset(arr);  <span class="comment">// 复制一份arr的副本，即数组被传入函数时就会复制一份新的副本</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;Origin arr: &#123;:?&#125;&quot;</span>, arr); <span class="comment">// Origin arr: [1, 2, 3, 4, 5]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-使用胖指针解决上述编译错误"><a href="#2-使用胖指针解决上述编译错误" class="headerlink" title="2. 使用胖指针解决上述编译错误"></a>2. 使用胖指针解决上述编译错误</h6><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用&amp;mut[u32]作为参数类型</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">reset</span></span>(arr: &amp;<span class="keyword">mut</span> [<span class="built_in">u32</span>])  <span class="comment">// &amp;mut [u32] 可变借用，它包含了长度信息，大小固定，引用作为参数，修改的是原数组</span></span><br><span class="line">&#123;</span><br><span class="line">    arr[<span class="number">0</span>] = <span class="number">5</span>;</span><br><span class="line">    arr[<span class="number">1</span>] = <span class="number">4</span>;</span><br><span class="line">    arr[<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">    arr[<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">    arr[<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;reset arr: &#123;:?&#125;&quot;</span>, arr);    <span class="comment">// reset arr: [5, 4, 3, 2, 1]</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;Array length: &#123;:?&#125;&quot;</span>, arr.len());  <span class="comment">// Array length: 5</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> arr: [<span class="built_in">u32</span>;<span class="number">5</span>] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;reset before : &#123;:?&#125;&quot;</span>, arr); <span class="comment">// Origin arr: [1, 2, 3, 4, 5]</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">let</span> mut_arr: &amp;<span class="keyword">mut</span> [<span class="built_in">u32</span>] = &amp;<span class="keyword">mut</span> arr;</span><br><span class="line">        reset(mut_arr);  <span class="comment">// 引用作为参数</span></span><br><span class="line">    &#125;</span><br><span class="line">     <span class="built_in">println!</span>(<span class="string">&quot;reset after : &#123;:?&#125;&quot;</span>, arr); <span class="comment">// reset after : [5, 4, 3, 2, 1]</span></span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
 
 
-
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比较&amp;[u32; 5]类型和&amp;mut [u32]类型空间占用情况</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">assert_eq!</span>(std::mem::size_of::&lt;&amp;[<span class="built_in">u32</span>; <span class="number">5</span>]&gt;(), <span class="number">8</span>);  <span class="comment">// &amp;[u32; 5]类型为普通指针，占8字节</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(std::mem::size_of::&lt;&amp;<span class="keyword">mut</span> [<span class="built_in">u32</span>]&gt;(), <span class="number">16</span>); <span class="comment">// &amp;mut [u32]类型为胖指针，占16字节</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="零大小类型-（Zero-Size-Type-ZST"><a href="#零大小类型-（Zero-Size-Type-ZST" class="headerlink" title="零大小类型 （Zero Size Type, ZST):"></a>零大小类型 （Zero Size Type, ZST):</h5><ul>
-<li>单元类型和单元结构体，大小都是零。</li>
-</ul>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="comment">// 一组零大小的类型</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Void</span></span> &#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Foo</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Baz</span></span> &#123;</span><br><span class="line">    foo: Foo,</span><br><span class="line">    qux: (),</span><br><span class="line">    baz: [<span class="built_in">u8</span>; <span class="number">0</span>],</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">assert_eq!</span>(std::mem::size_of::&lt;()&gt;(), <span class="number">0</span>);  <span class="comment">// 单元类型</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(std::mem::size_of::&lt;Foo&gt;(), <span class="number">0</span>); <span class="comment">// 单元结构体</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(std::mem::size_of::&lt;Baz&gt;(), <span class="number">0</span>); <span class="comment">// 零大小类型组成的结构体</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(std::mem::size_of::&lt;Void&gt;(), <span class="number">0</span>); <span class="comment">// 空枚举</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(std::mem::size_of::&lt;[(); <span class="number">10</span>]&gt;(), <span class="number">0</span>); <span class="comment">// 单元类型组成的数组大小也为0&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="底类型-（Bottom-Type"><a href="#底类型-（Bottom-Type" class="headerlink" title="底类型 （Bottom Type)"></a>底类型 （Bottom Type)</h5><pre><code>起始就是nerver类型：</code></pre>
-<ul>
-<li><p>没有值</p>
-</li>
-<li><p>是其它任意类型的子类型</p>
-</li>
-<li><p>表示”无“</p>
-</li>
-<li><p>使用叹号 ! 表示</p>
-</li>
-<li><p>引入这种类型是为了同一管理那些没有值的情况，确保类型安全：</p>
-<ul>
-<li>发散函数 （Diverging Functio)<ul>
-<li>是指会导致线程崩溃的<code>panic!(&quot;this function nerver retures&quot;)</code>或者用于退出函数的<code>std::process::exit</code>，这类函数永远不会有返回值</li>
-</ul>
-</li>
-<li>continue和break关键字<ul>
-<li>只表示流程的跳转，不会返回什么</li>
-</ul>
-</li>
-<li>loop循环<ul>
-<li>在无限循环的时候没有返回值</li>
-</ul>
-</li>
-<li>空枚举， 比如enum Void{}</li>
-</ul>
-<p>底类型的一个应用场景是Rust的if语句表达式要求所有分支类型一致，但有时候，分支可能包含了永远无法返回的情况，这是就可以返回底类型，因为它是所有类型的子类型。</p>
-</li>
-</ul>
-<h4 id="2-类型推导"><a href="#2-类型推导" class="headerlink" title="2. 类型推导"></a>2. 类型推导</h4><p>Rust只能在局部范围内进行类型推导。</p>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类型推导</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">sum</span></span>(a: <span class="built_in">u32</span>, b:<span class="built_in">i32</span>) -&gt; <span class="built_in">u32</span> &#123;</span><br><span class="line">    a + (b <span class="keyword">as</span> <span class="built_in">u32</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 自动推导变量a, b的类型</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">assert_eq!</span>(sum(a,b), <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">let</span> elem = <span class="number">5u8</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> vec = <span class="built_in">Vec</span>::new();  <span class="comment">// 空向量</span></span><br><span class="line">    vec.push(elem);</span><br><span class="line">    <span class="built_in">assert_eq!</span>(vec, [<span class="number">5</span>]);      <span class="comment">// vec的类型为Vec&lt;u8&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="Turbofish操作符"><a href="#Turbofish操作符" class="headerlink" title="Turbofish操作符"></a>Turbofish操作符</h5><p>当Rust无法从上下文中自动推导出类型的时候，编译器就会通过错误信息来提示添加类型标注</p>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无法进行类型推导</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, x.parse().unwrap());</span><br><span class="line">    <span class="comment">/* 错误信息,parse是一个泛型方法，当前无法进行自动类型推导</span></span><br><span class="line"><span class="comment">    error[E0284]: type annotations needed</span></span><br><span class="line"><span class="comment">--&gt; src/main.rs:5:24</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">5 |     println!(&quot;&#123;:?&#125;&quot;, x.parse().unwrap());</span></span><br><span class="line"><span class="comment">  |                        ^^^^^ cannot infer type for type parameter `F` declared on the associated function `parse`</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">  = note: cannot satisfy `&lt;_ as std::str::FromStr&gt;::Err == _`</span></span><br><span class="line"><span class="comment">help: consider specifying the type argument in the method call</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">5 |     println!(&quot;&#123;:?&#125;&quot;, x.parse::&lt;F&gt;().unwrap());</span></span><br><span class="line"><span class="comment">  |                             ^^^^^</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加类型标注信息</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">    <span class="keyword">let</span> int_x: <span class="built_in">i32</span> = x.parse().unwrap(); <span class="comment">// 标注类型，想把字符串&quot;1&quot;转换为i32类型</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(int_x, <span class="number">1</span>);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>另一种类型标注方法：<strong>turbofish操作符</strong>, 即使用<code>::&lt;type&gt;</code>的形式</p>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// turbofish操作标注类型信息</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">    <span class="built_in">assert_eq!</span>(x.parse::&lt;<span class="built_in">i32</span>&gt;().unwrap(), <span class="number">1</span>);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Rust的自动类型推导还有很多缺陷，所以在使用时尽量显式声明类型。</p>
-<h4 id="3-泛型"><a href="#3-泛型" class="headerlink" title="3. 泛型"></a>3. 泛型</h4><p>泛型(Generic)是一种参数化多态，使用泛型可以编写更为抽象的代码。泛型就是把一个泛化的类型作为参数，单个类型就可以抽象化为一簇类型。</p>
-<h5 id="1-泛型函数、泛型结构体"><a href="#1-泛型函数、泛型结构体" class="headerlink" title="1. 泛型函数、泛型结构体"></a>1. 泛型函数、泛型结构体</h5><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 泛型函数</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">foo</span></span>&lt;T&gt;(x: T) -&gt; T &#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="built_in">assert_eq!</span>(foo(<span class="number">1</span>), <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">assert_eq!</span>(foo(<span class="string">&quot;hello&quot;</span>), <span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 泛型结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span>&lt;T&gt; &#123;  <span class="comment">// &lt;T&gt; 是泛型声明，</span></span><br><span class="line">    x: T,</span><br><span class="line">    y: T</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>泛型只有被声明之后才可以被使用。</p>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 泛型结构体</span></span><br><span class="line"><span class="meta">#[derive(Debug, PartialEq)]</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span>&lt;T&gt; &#123;</span><br><span class="line">    x: T,</span><br><span class="line">    y: T</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 为泛型结构体实现具体方法时，也需要声明泛型类型</span></span><br><span class="line"><span class="keyword">impl</span>&lt;T&gt; Point&lt;T&gt; &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">new</span></span>(x: T, y: T) -&gt; <span class="keyword">Self</span> &#123;</span><br><span class="line">        Point&#123;x: x, y: y&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> point1 = Point::new(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">let</span> point2 = Point::new(<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>);</span><br><span class="line">    <span class="built_in">assert_eq!</span>(point1, Point&#123;x: <span class="number">1</span>, y: <span class="number">2</span>&#125;);</span><br><span class="line">    <span class="built_in">assert_eq!</span>(point2, Point&#123;x: <span class="string">&quot;1&quot;</span>, y: <span class="string">&quot;2&quot;</span>&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Rust中的泛型属于静多态，它是一种编译器多态。在编译器，不管是泛型枚举，还是泛型函数和泛型结构体，都会单态化(Monomorphization)。单态化是编译器进行静态分发的一种策略。比如对于一个泛型函数，单态化意味着编译器要将泛型函数生成具体类型对应的函数，也就是C++语言中的实例化。</p>
-<p>泛型及单态化是Rust重要的两个功能：优点：单态化静态分发的好处是性能好，没有运行时开销；缺点：容易造成编译后生成的二进制文件膨胀。</p>
-<h5 id="2-泛型返回值自动推导"><a href="#2-泛型返回值自动推导" class="headerlink" title="2. 泛型返回值自动推导"></a>2. 泛型返回值自动推导</h5><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 泛型返回值类型的自动推导</span></span><br><span class="line"><span class="meta">#[derive(Debug, PartialEq)]</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Foo</span></span>(<span class="built_in">i32</span>);         <span class="comment">// 元组结构体</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#[derive(Debug, PartialEq)]</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Bar</span></span>(<span class="built_in">i32</span>, <span class="built_in">i32</span>);   <span class="comment">// 元组结构体</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// trait接口抽象</span></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Inst</span></span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">new</span></span>(i: <span class="built_in">i32</span>) -&gt; <span class="keyword">Self</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 为结构体Foo实现 Inst trait</span></span><br><span class="line"><span class="keyword">impl</span> Inst <span class="keyword">for</span> Foo &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">new</span></span>(i: <span class="built_in">i32</span>) -&gt; Foo &#123;</span><br><span class="line">        Foo(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 为结构体Bar实现trait Inst</span></span><br><span class="line"><span class="keyword">impl</span> Inst <span class="keyword">for</span> Bar &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">new</span></span>(i: <span class="built_in">i32</span>) -&gt; Bar &#123;</span><br><span class="line">        Bar(i, i + <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 对泛型T进行trait限定，即实现了Inst的类型</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">foobar</span></span>&lt;T: Inst&gt;(i: <span class="built_in">i32</span>)-&gt; T &#123;</span><br><span class="line">    T::new(i)    <span class="comment">// 调用T类型的new方法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> f: Foo = foobar(<span class="number">10</span>); <span class="comment">// 指定f的类型为Foo,则编译器自动推导出调用Foo::new方法</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(f, Foo(<span class="number">10</span>));</span><br><span class="line">    <span class="keyword">let</span> b: Bar = foobar(<span class="number">20</span>); <span class="comment">// 编译器自动推导出调用Bar::new方法</span></span><br><span class="line">    <span class="built_in">assert_eq!</span>(b, Bar(<span class="number">20</span>, <span class="number">30</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="4-深入trait"><a href="#4-深入trait" class="headerlink" title="4. 深入trait"></a>4. 深入trait</h4><p>Rust中的所有抽象，比如接口抽象，OOP范式抽象，函数式范式抽象等，均基于trait完成。同时trait也保证了这些抽象几乎都是运行时零开销的。</p>
-<p><strong>trait</strong>:</p>
-<ul>
-<li>从类型系统角度来说，trait是Rust对Ad-hoc多态的支持。</li>
-<li>从语义上来说，trait是在行为上对类型的约束，这种约束让trait有以下4中用法：<ul>
-<li>接口抽象： 接口是对类型行为的统一约束</li>
-<li>泛型约束：泛型的行为被trait限定在更有限的范围内</li>
-<li>抽象类型：在运行时作为一种间接的抽象类型去使用，动态地分发给具体的类型</li>
-<li>标签trait:  对类型的约束，可以直接作为一种“标签”使用。</li>
-</ul>
-</li>
-</ul>
-<h5 id="4-1-接口抽象"><a href="#4-1-接口抽象" class="headerlink" title="4.1 接口抽象"></a>4.1 接口抽象</h5><p>Ad-hoc多态： 同一个trait，在不同的上下文中实现的行为不同。为不同的类型实现trait，属于一种函数重载，也可以说函数重载就是一种Ad-hoc多态。</p>
-<h6 id="关联类型"><a href="#关联类型" class="headerlink" title="关联类型"></a>关联类型</h6><p>待补充</p>
-<h6 id="trait一致性"><a href="#trait一致性" class="headerlink" title="trait一致性"></a>trait一致性</h6><ul>
-<li>通过实现标准库中的Add trait功能实现操作符的重载。标准库中的u32和u64是不能直接相加的，因为没有实现Add trait。</li>
-</ul>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a : <span class="built_in">u32</span> = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> b : <span class="built_in">u64</span> = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">let</span> c = a + b;  <span class="comment">// cannot add `u64` to `u32`</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, c);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    error[E0308]: mismatched types</span></span><br><span class="line"><span class="comment">--&gt; src/main.rs:5:17</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">5 |     let c = a + b;</span></span><br><span class="line"><span class="comment">  |                 ^ expected `u32`, found `u64`</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">error[E0277]: cannot add `u64` to `u32`</span></span><br><span class="line"><span class="comment">--&gt; src/main.rs:5:15</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">5 |     let c = a + b;</span></span><br><span class="line"><span class="comment">  |               ^ no implementation for `u32 + u64`</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">  = help: the trait `std::ops::Add&lt;u64&gt;` is not implemented for `u32</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>尝试通过实现标准库的Add trait来支持u32和u64相加</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">use std::ops::Add;</span><br><span class="line">impl Add&lt;u64&gt; for u32 &#123;</span><br><span class="line">    type Output &#x3D; u64;  &#x2F;&#x2F; 关联类型</span><br><span class="line">    fn add(self, other: u64) -&gt; Self::Output &#123;</span><br><span class="line">        (self as u64) + other</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">fn main() &#123;</span><br><span class="line">    let a &#x3D; 1u32;</span><br><span class="line">    let b &#x3D; 2u64;</span><br><span class="line">    assert_eq!(a + b, 3);</span><br><span class="line">    &#x2F;*</span><br><span class="line">    error[E0117]: only traits defined in the current crate can be implemented for arbitrary types</span><br><span class="line">--&gt; src&#x2F;main.rs:2:1</span><br><span class="line">  |</span><br><span class="line">2 | impl Add&lt;u64&gt; for u32 &#123;</span><br><span class="line">  | ^^^^^--------^^^^^---</span><br><span class="line">  | |    |            |</span><br><span class="line">  | |    |            &#96;u32&#96; is not defined in the current crate</span><br><span class="line">  | |    &#96;u64&#96; is not defined in the current crate</span><br><span class="line">  | impl doesn&#39;t use only types from inside the current crate</span><br><span class="line">  |</span><br><span class="line">  &#x3D; note: define and implement a trait or new type instead</span><br><span class="line"> </span><br><span class="line">    *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>编译出错，因为Rust遵循一条重要的规则：<strong>孤儿规则(Orphan Rule)，规定如果要实现某个trait，那么该trait和要实现该trait的那个类型至少有一个在当前的crate中定义。</strong>而Add trait,u32和u64都不是在当前trait中定义的，而是定义与标准库中的。如果没有孤儿规则的限制，标准库中的u32的加法行为就会被破坏性的改写。</p>
-<ul>
-<li>在当前crate中定义Add trait(不违反孤儿规则)</li>
-</ul>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在当前crate中定义Add trait</span></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Add</span></span>&lt;RHS=<span class="keyword">Self</span>&gt; &#123;</span><br><span class="line">    <span class="class"><span class="keyword">type</span> <span class="title">Output</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">add</span></span>(<span class="keyword">self</span>, rhs: RHS) -&gt;Self::Output;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 实现Add时将RHS和关联类型指定u64类型</span></span><br><span class="line"><span class="keyword">impl</span> Add&lt;<span class="built_in">u64</span>&gt; <span class="keyword">for</span> <span class="built_in">u32</span> &#123;</span><br><span class="line">    <span class="class"><span class="keyword">type</span> <span class="title">Output</span></span> = <span class="built_in">u64</span>;  <span class="comment">// 关联类型</span></span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">add</span></span>(<span class="keyword">self</span>, other: <span class="built_in">u64</span>) -&gt; Self::Output &#123;</span><br><span class="line">        (<span class="keyword">self</span> <span class="keyword">as</span> <span class="built_in">u64</span>) + other</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">1u32</span>;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">2u64</span>;</span><br><span class="line">    <span class="built_in">assert_eq!</span>(a.add(b), <span class="number">3</span>);   <span class="comment">// 调用dd相加，而不是操作符+，否则会被Rust识别为标准库中的Add实现</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在本地创建新类型，并实现标准库Add trait(不违反)</li>
-</ul>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本地创建新类型并实现标准库Add trait</span></span><br><span class="line"><span class="keyword">use</span> std::ops::Add;</span><br><span class="line"><span class="meta">#[derive(Debug)]</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span> &#123;</span><br><span class="line">    x : <span class="built_in">i32</span>,</span><br><span class="line">    y : <span class="built_in">i32</span>,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 实现标准库Add trait让Point也支持加号操作符+</span></span><br><span class="line"><span class="keyword">impl</span> Add <span class="keyword">for</span> Point &#123;</span><br><span class="line">    <span class="class"><span class="keyword">type</span> <span class="title">Output</span></span> = Point;  <span class="comment">// 关联类型Output必须指定具体类型</span></span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">add</span></span>(<span class="keyword">self</span>, other: Point) -&gt; Point &#123;   <span class="comment">// 返回类型也可以写Self, Self::Output</span></span><br><span class="line">        Point &#123;</span><br><span class="line">            x: <span class="keyword">self</span>.x + other.x,</span><br><span class="line">            y: <span class="keyword">self</span>.y + other.y,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, Point &#123;x: <span class="number">1</span>, y: <span class="number">0</span>&#125; + Point &#123;x: <span class="number">2</span>, y: <span class="number">3</span>&#125;);  <span class="comment">// Point &#123; x: 3, y: 3 &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h6 id="trait继承"><a href="#trait继承" class="headerlink" title="trait继承"></a>trait继承</h6><p>Rust不支持传统面向对象的继承，但支持trait继承。子trait可以继承父trait中定义或实现的方法。</p>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// trait继承示例</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Page</span></span> &#123;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">// 这里要用&amp;Self,而不是self,否则编译会报错，还没搞清楚</span></span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">set_page</span></span>(&amp;<span class="keyword">self</span>, p: <span class="built_in">i32</span>) -&gt;() &#123; <span class="comment">// 或者不加-&gt;()</span></span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;Page Default: 1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">PerPage</span></span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">set_perpage</span></span>(&amp;<span class="keyword">self</span>, num: <span class="built_in">i32</span>) -&gt;() &#123; <span class="comment">// 或者不加-&gt;()</span></span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;Per Page default: 10&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyPaginate</span></span> &#123;</span><br><span class="line">    page: <span class="built_in">i32</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 为MyPaginate实现Page和PerPage，空impl块表示使用trait的默认实现</span></span><br><span class="line"><span class="keyword">impl</span> Page <span class="keyword">for</span> MyPaginate &#123;&#125;</span><br><span class="line"><span class="keyword">impl</span> PerPage <span class="keyword">for</span> MyPaginate &#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> my_paginate = MyPaginate&#123;page: <span class="number">1</span>&#125;;</span><br><span class="line">    my_paginate.set_page(<span class="number">2</span>);      <span class="comment">// Page Default: 1</span></span><br><span class="line">    my_paginate.set_perpage(<span class="number">100</span>);  <span class="comment">//Per Page default: 10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="通过trait继承扩展功能功能"><a href="#通过trait继承扩展功能功能" class="headerlink" title="通过trait继承扩展功能功能"></a>通过trait继承扩展功能功能</h6><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// trait继承示例</span></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Page</span></span> &#123;</span><br><span class="line">  <span class="comment">// 这里要用&amp;Self,而不是self,否则编译会报错，还没搞清楚</span></span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">set_page</span></span>(&amp;<span class="keyword">self</span>, p: <span class="built_in">i32</span>) -&gt;() &#123; <span class="comment">// 或者不加-&gt;()</span></span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;Page Default: 1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">PerPage</span></span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">set_perpage</span></span>(&amp;<span class="keyword">self</span>, num: <span class="built_in">i32</span>) -&gt;() &#123; <span class="comment">// 或者不加-&gt;()</span></span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;Per Page default: 10&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyPaginate</span></span> &#123;</span><br><span class="line">    page: <span class="built_in">i32</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 为MyPaginate实现Page和PerPage，空impl块表示使用trait的默认实现</span></span><br><span class="line"><span class="keyword">impl</span> Page <span class="keyword">for</span> MyPaginate &#123;&#125;</span><br><span class="line"><span class="keyword">impl</span> PerPage <span class="keyword">for</span> MyPaginate &#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 使用trait继承扩展功能</span></span><br><span class="line"><span class="comment">// 定义Paginate，让它继承Page和PerPage</span></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Paginate</span></span>: Page + PerPage &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fn</span> <span class="title">set_skip_page</span></span>(&amp;<span class="keyword">self</span>, num: <span class="built_in">i32</span>) &#123;</span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;Skip Page: &#123;:?&#125;&quot;</span>, num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 为所有拥有Page和PerPage行为的类型T实现Paginate</span></span><br><span class="line"><span class="comment">// 不用修改已有代码，so方便!!!!!!!!!!</span></span><br><span class="line"><span class="keyword">impl</span> &lt;T: Page + PerPage&gt;Paginate <span class="keyword">for</span> T &#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> my_paginate = MyPaginate&#123;page: <span class="number">1</span>&#125;;</span><br><span class="line">    my_paginate.set_page(<span class="number">2</span>);      <span class="comment">// Page Default: 1</span></span><br><span class="line">    my_paginate.set_perpage(<span class="number">100</span>);  <span class="comment">//Per Page default: 10</span></span><br><span class="line">    <span class="comment">// MyPaginate实现了Paginate，否则报错</span></span><br><span class="line">    <span class="comment">// error[E0599]: no method named `set_skip_page`</span></span><br><span class="line">    <span class="comment">// found for struct `MyPaginate` in the current scope</span></span><br><span class="line">    my_paginate.set_skip_page(<span class="number">12</span>);  <span class="comment">// Skip Page: 12</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>trait继承也可以用于扩展标准库中的方法。</p>
-<h5 id="4-2-泛型约束"><a href="#4-2-泛型约束" class="headerlink" title="4.2 泛型约束"></a>4.2 泛型约束</h5><p>使用泛型编程时，很多情况下的行为并不是针对所有类型都实现的。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/01/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F/" rel="prev" title="Rust类型系统">
+      <i class="fa fa-chevron-left"></i> Rust类型系统
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/01/%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Henry Xue">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="haocoder">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/01/%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF/" class="post-title-link" itemprop="url">数据复制技术</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-01 18:45:33" itemprop="dateCreated datePublished" datetime="2020-11-01T18:45:33+08:00">2020-11-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>数据复制主要是通过互联网络在多台机器上保存相同数据的副本。通过数据复制可以得到：</p>
-<ul>
-<li>使数据在地理位置上更接近用户，<strong>降低用户访问延迟</strong></li>
-<li>当部分组件出现故障，系统依然可以继续提供服务，从而<strong>提高可用性</strong></li>
-<li>扩展至多台机器以同时提供数据访问服务，从而<strong>提高读吞吐量</strong></li>
-</ul>
-<p>复制过程中可能会出现各种故障，以及该如何处理这些故障。</p>
-<h3 id="三种数据复制方法："><a href="#三种数据复制方法：" class="headerlink" title="三种数据复制方法："></a>三种数据复制方法：</h3><p>几乎所有的分布式数据库都使用以下三种方法的某一种，以及选择同步复制或异步复制策略</p>
-<ul>
-<li>主从复制</li>
-<li>多主节点复制</li>
-<li>无主节点复制</li>
-</ul>
-<h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><p>每个保存数据库完整数据集的节点称为副本。这里先假设单台机器可以保存整个数据集<strong>如何确保所有副本之间的数据是一致的？</strong><br><strong>主从复制</strong>：基于主节点的复制，原理如下：</p>
-<ol>
-<li>指定某一个副本为主副本（或称为主节点）。用户的写请求首先发送给主副本，主副本首先将数据写入本地存储系统</li>
-<li>其他副本全称为从副本（或称为从节点）。主节点将数据更改作为复制的日志或更改流发送给所有从副本。每个从副本获得更改日志之后将其应用到本地，且严格保持与主副本相同的写入顺序。</li>
-<li>客户端可以从主节点或从节点查询数据</li>
-</ol>
-<p><strong>只有主副本可以接受客户端的写请求，所有副本都可以接受读请求</strong></p>
-<h4 id="同步复制与异步复制策略"><a href="#同步复制与异步复制策略" class="headerlink" title="同步复制与异步复制策略"></a>同步复制与异步复制策略</h4><p>对于关系数据库系统，同步或异步复制通常是一个可配置的选项。如图5-2，基于主节点(Leader-based replication)的复制，从节点1(Follower1)是同步复制，主节点需要等待从节点1确认完成了写入，然后才会向用户响应写入完成；从节点2是异步复制，主节点不用等待确认写入完成。<br><img src="https://vipkshttps9.wiz.cn/ks/note/view/9ba27eda-0c0a-45c2-b2aa-41ebc99df5a1/64d4faf1-4eb8-4c9c-a57b-7d3f942c120d/index_files/691507468.png" alt="主从复制"></p>
-<h5 id="同步复制的优点："><a href="#同步复制的优点：" class="headerlink" title="同步复制的优点："></a>同步复制的优点：</h5><p> 一旦向用户确认写入完成，即可保证与主节点的数据一致，万一主节点发生故障，可以继续从从节点访问最新数据</p>
-<h5 id="同步复制的缺点："><a href="#同步复制的缺点：" class="headerlink" title="同步复制的缺点："></a>同步复制的缺点：</h5><p>如果同步的从节点无法完成确认（发生故障，网络故障），写入就不能视为成功，主节点会阻塞后续所有写入请求，直到同步副本完成确认<br>通常采用同步复制时，只有一个从节点是同步的，其它的都是异步复制模式，一旦同步的从节点不可用，则选一个异步的从节点提升为同步模式。</p>
-<h4 id="新增从节点"><a href="#新增从节点" class="headerlink" title="新增从节点"></a>新增从节点</h4><p>当系统需要新增从节点来提供容错能力，或替换失败的副本时，<strong>如何确保新的从节点和主节点保持数据一致？</strong><br>在不停机、数据服务不中断的前提下完成新增从节点的数据同步操作，逻辑上的主要操作步骤如下：</p>
-<ol>
-<li>在某个时间点对主节点数据产生一个一致性快照，避免长时间锁定数据库。MySQL有第三方备份工具innobackupex</li>
-<li>将此快照拷贝到新的从节点</li>
-<li>从节点连接到主节点，并请求快照点之后所发生的数据更改日志。快照与系统复制日志的某个确定位置相关联，这个位置在PG中称为“log sequence number(日志序列号），MySQL中称为”binlog coordinates”</li>
-<li>获得日志之后，从节点来应用这些快照点之后所有的数据变更，这个过程称为<strong>追赶</strong>。接下来，它可以继续处理主节点上新的数据变化。并重复步骤1~4。具体的详细步骤和操作因数据库系统而异。</li>
-</ol>
-<h4 id="处理节点失效"><a href="#处理节点失效" class="headerlink" title="处理节点失效"></a>处理节点失效</h4><p><strong>如何通过主从复制技术实现系统高可用呢？</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -914,6 +592,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">语句与表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E7%BB%91%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">变量与绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%8D%E7%BD%AE%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E5%B7%A6%E5%80%BC-%E4%B8%8E%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E5%8F%B3%E5%80%BC"><span class="nav-number">2.1.</span> <span class="nav-text">位置表达式(左值)与值表达式(右值)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%8F%AF%E5%8F%98%E7%BB%91%E5%AE%9A"><span class="nav-number">2.2.</span> <span class="nav-text">不可变绑定与可变绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E6%9D%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">所有权和引用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%B8%8E%E9%97%AD%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">函数与闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">函数定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">3.2.</span> <span class="nav-text">作用域与生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="nav-number">3.3.</span> <span class="nav-text">函数指针</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0"><span class="nav-number">3.3.1.</span> <span class="nav-text">函数作为参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">3.3.2.</span> <span class="nav-text">函数作为返回值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CTFE%E6%9C%BA%E5%88%B6"><span class="nav-number">3.4.</span> <span class="nav-text">CTFE机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">3.5.</span> <span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#match%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="nav-number">4.1.</span> <span class="nav-text">match表达式与模式匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-let%E5%92%8Cwhile-let%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">if let和while let表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.1.</span> <span class="nav-text">1. 布尔类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%9F%BA%E6%9C%AC%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.2.</span> <span class="nav-text">2. 基本数字类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.3.</span> <span class="nav-text">3. 字符类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.4.</span> <span class="nav-text">4. 数组类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E8%8C%83%E5%9B%B4%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.5.</span> <span class="nav-text">5. 范围类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E5%88%87%E7%89%87%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.6.</span> <span class="nav-text">6. 切片类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-str%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.7.</span> <span class="nav-text">7. str字符串类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-%E5%8E%9F%E7%94%9F%E6%8C%87%E9%92%88"><span class="nav-number">5.8.</span> <span class="nav-text">8. 原生指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-never%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.9.</span> <span class="nav-text">9. never类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.</span> <span class="nav-text">复合数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%83%E7%BB%84"><span class="nav-number">6.1.</span> <span class="nav-text">1. 元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">6.2.</span> <span class="nav-text">2. 结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B7%E5%90%8D%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">6.2.1.</span> <span class="nav-text">具名结构体</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">6.2.2.</span> <span class="nav-text">元组结构体</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">6.2.3.</span> <span class="nav-text">单元结构体</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%9E%9A%E4%B8%BE%E4%BD%93"><span class="nav-number">6.3.</span> <span class="nav-text">3. 枚举体</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%A0%E5%8F%82%E6%95%B0%E6%9E%9A%E4%B8%BE"><span class="nav-number">6.3.1.</span> <span class="nav-text">无参数枚举</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B1%BBC%E6%9E%9A%E4%B8%BE%E4%BD%93"><span class="nav-number">6.3.2.</span> <span class="nav-text">类C枚举体</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E6%9E%9A%E4%B8%BE%E4%BD%93"><span class="nav-number">6.3.3.</span> <span class="nav-text">带参数枚举体</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">7.</span> <span class="nav-text">常用集合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BA%8F%E5%88%97%EF%BC%9A-%E5%90%91%E9%87%8F"><span class="nav-number">7.1.</span> <span class="nav-text">线性序列： 向量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BA%8F%E5%88%97%EF%BC%9A%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="nav-number">7.2.</span> <span class="nav-text">线性序列：双端队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BA%8F%E5%88%97%EF%BC%9A-%E9%93%BE%E8%A1%A8"><span class="nav-number">7.3.</span> <span class="nav-text">线性序列： 链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Key-Value%E6%98%A0%E5%B0%84%E8%A1%A8%EF%BC%9AHashMap%E5%92%8CBTreeMap"><span class="nav-number">7.4.</span> <span class="nav-text">Key-Value映射表：HashMap和BTreeMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E5%90%88%EF%BC%9A-HashSet%E5%92%8CBTreeSet"><span class="nav-number">7.5.</span> <span class="nav-text">集合： HashSet和BTreeSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%9A-BinaryHeap"><span class="nav-number">7.6.</span> <span class="nav-text">优先队列： BinaryHeap</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">8.</span> <span class="nav-text">智能指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E5%92%8Ctrait"><span class="nav-number">9.</span> <span class="nav-text">泛型和trait</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">11.</span> <span class="nav-text">表达式优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E4%B8%8E%E6%89%93%E5%8D%B0"><span class="nav-number">12.</span> <span class="nav-text">注释与打印</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">12.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%8D%B0"><span class="nav-number">12.2.</span> <span class="nav-text">打印</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
